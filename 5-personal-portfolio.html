@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spriha — Portfolio</title>
+  <style>
+    :root {
+      --deep: #04231f;
+      --forest: #063d34;
+      --teal: #14b8a6;
+      --cyan: #22d3ee;
+      --blue: #3b82f6;
+      --lime: #a3e635;
+      --text: #eafff9;
+      --muted: #9fd8cd;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--deep);
+    }
+    a { text-decoration: none; }
+
+    #navbar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      background: linear-gradient(90deg, var(--forest), #052e28);
+      padding: 14px 26px;
+      z-index: 100;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+    }
+    .nav-link {
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .nav-link:hover { background: var(--teal); color: var(--deep); }
+
+    #welcome-section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: radial-gradient(circle at 30% 30%, #0b6b5c 0%, transparent 55%),
+                  radial-gradient(circle at 75% 70%, #0b4a86 0%, transparent 55%),
+                  var(--deep);
+    }
+    #welcome-section h1 {
+      font-size: clamp(2.4rem, 7vw, 4.6rem);
+      margin: 0;
+      background: linear-gradient(90deg, var(--cyan), var(--lime));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    #welcome-section p {
+      font-size: 1.3rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 14px;
+    }
+
+    #projects {
+      padding: 90px 22px;
+      background: var(--forest);
+      text-align: center;
+    }
+    #projects h2 {
+      font-size: 2.4rem;
+      margin-bottom: 50px;
+      display: inline-block;
+      border-bottom: 4px solid var(--lime);
+      padding-bottom: 8px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .project-tile {
+      background: #04231f;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      color: var(--text);
+      display: block;
+    }
+    .project-tile:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(20,184,166,0.35);
+    }
+    .tile-top {
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+    .t1 { background: linear-gradient(135deg, var(--teal), var(--blue)); }
+    .t2 { background: linear-gradient(135deg, var(--cyan), #0b6b5c); }
+    .t3 { background: linear-gradient(135deg, var(--blue), #6d28d9); }
+    .t4 { background: linear-gradient(135deg, var(--lime), var(--teal)); }
+    .tile-title { padding: 18px; font-size: 1.15rem; font-weight: 700; }
+    .tile-title .code { color: var(--cyan); }
+
+    #contact {
+      min-height: 55vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: radial-gradient(circle at 50% 0%, #0b4a86 0%, transparent 60%), var(--deep);
+      padding: 60px 22px;
+    }
+    #contact h2 { font-size: 2.4rem; margin-bottom: 10px; }
+    #contact p { color: var(--muted); margin-bottom: 26px; }
+    .contact-links { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
+    .contact-links a {
+      background: var(--teal);
+      color: var(--deep);
+      padding: 12px 26px;
+      border-radius: 40px;
+      font-weight: 700;
+    }
+    .contact-links a:hover { background: var(--lime); }
+
+    footer {
+      background: #021a17;
+      color: var(--muted);
+      text-align: center;
+      padding: 22px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      #navbar { justify-content: center; padding: 10px; }
+      #welcome-section p { font-size: 1.05rem; padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <a class="nav-link" href="#welcome-section">About</a>
+    <a class="nav-link" href="#projects">Projects</a>
+    <a class="nav-link" href="#contact">Contact</a>
+  </nav>
+
+  <section id="welcome-section">
+    <h1>Hi, I'm Spriha</h1>
+    <p>Front-end developer who loves bold color and clean code.</p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="grid">
+      <a class="project-tile" href="#" target="_blank" rel="noopener">
+        <div class="tile-top t1">🎨</div>
+        <div class="tile-title"><span class="code">&lt;</span> Survey Form <span class="code">/&gt;</span></div>
+      </a>
+      <a class="project-tile" href="#" target="_blank" rel="noopener">
+        <div class="tile-top t2">🎸</div>
+        <div class="tile-title"><span class="code">&lt;</span> Tribute Page <span class="code">/&gt;</span></div>
+      </a>
+      <a class="project-tile" href="#" target="_blank" rel="noopener">
+        <div class="tile-top t3">📚</div>
+        <div class="tile-title"><span class="code">&lt;</span> Documentation Page <span class="code">/&gt;</span></div>
+      </a>
+      <a class="project-tile" href="#" target="_blank" rel="noopener">
+        <div class="tile-top t4">🥤</div>
+        <div class="tile-title"><span class="code">&lt;</span> Product Landing Page <span class="code">/&gt;</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Let's build something</h2>
+    <p>Open to collaborations, freelance work, and a good cup of coffee.</p>
+    <div class="contact-links">
+      <a id="profile-link" href="https://github.com/freeCodeCamp" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:sprihagupta28@gmail.com">Email</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Spriha · Built with HTML &amp; CSS for the freeCodeCamp Responsive Web Design cert.
+  </footer>
+
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

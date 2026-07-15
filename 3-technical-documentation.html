@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Basics — Technical Documentation</title>
+  <style>
+    :root {
+      --bg: #0f1c2e;
+      --nav: #12233a;
+      --accent: #14b8a6;
+      --text: #e6edf5;
+      --muted: #9fb3c8;
+      --code-bg: #0a1522;
+      --border: #24384f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 100%;
+      background: var(--nav);
+      border-right: 2px solid var(--accent);
+      overflow-y: auto;
+      padding-bottom: 40px;
+    }
+    #navbar header {
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 22px 20px;
+      color: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-link {
+      display: block;
+      padding: 13px 20px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-link:hover { background: #0d1b2d; color: var(--accent); text-decoration: none; }
+
+    #main-doc {
+      margin-left: 300px;
+      padding: 30px 40px 80px;
+      max-width: 900px;
+    }
+    .main-section { padding-top: 20px; margin-bottom: 20px; }
+    .main-section header {
+      font-size: 1.7rem;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    code {
+      display: block;
+      white-space: pre-wrap;
+      background: var(--code-bg);
+      color: #a5f3e8;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-family: "Fira Code", Consolas, Monaco, monospace;
+      font-size: 0.92rem;
+      margin: 14px 0;
+    }
+    li { margin-bottom: 6px; }
+
+    @media (max-width: 850px) {
+      #navbar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid var(--accent);
+      }
+      #main-doc { margin-left: 0; padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <header>JS Basics Docs</header>
+    <a class="nav-link" href="#Introduction">Introduction</a>
+    <a class="nav-link" href="#Variables">Variables</a>
+    <a class="nav-link" href="#Data_Types">Data Types</a>
+    <a class="nav-link" href="#Functions">Functions</a>
+    <a class="nav-link" href="#Conditionals">Conditionals</a>
+    <a class="nav-link" href="#Loops">Loops</a>
+    <a class="nav-link" href="#Reference">Reference</a>
+  </nav>
+
+  <main id="main-doc">
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <p>JavaScript is a high-level, interpreted programming language that runs in every modern web browser. It powers interactivity on the web, from form validation to full single-page applications.</p>
+      <p>This guide covers the core building blocks a beginner needs to start writing JavaScript. You can run every example below directly in your browser's developer console.</p>
+      <p>JavaScript is case-sensitive and uses the Unicode character set. Statements are typically terminated with a semicolon, though it is inserted automatically in most cases.</p>
+    </section>
+
+    <section class="main-section" id="Variables">
+      <header>Variables</header>
+      <p>Variables are named containers for storing data values. In modern JavaScript there are three ways to declare them:</p>
+      <ul>
+        <li><code>let</code> — a block-scoped variable that can be reassigned.</li>
+        <li><code>const</code> — a block-scoped constant that cannot be reassigned.</li>
+        <li><code>var</code> — the older, function-scoped declaration.</li>
+      </ul>
+      <p>A simple declaration looks like this:</p>
+      <code>let score = 10;
+const name = "Ada";
+score = 20; // allowed
+// name = "Grace"; // TypeError: cannot reassign a const</code>
+      <p>As a rule of thumb, prefer <code>const</code> by default and use <code>let</code> only when you know a value will change.</p>
+    </section>
+
+    <section class="main-section" id="Data_Types">
+      <header>Data Types</header>
+      <p>JavaScript has several primitive data types plus objects. The primitives are the simplest values the language works with.</p>
+      <ul>
+        <li>String — text, e.g. <code>"hello"</code></li>
+        <li>Number — integers and decimals, e.g. <code>42</code> or <code>3.14</code></li>
+        <li>Boolean — <code>true</code> or <code>false</code></li>
+        <li>Null, Undefined — absence of a value</li>
+      </ul>
+      <p>You can check any value's type with the <code>typeof</code> operator:</p>
+      <code>typeof "hello"; // "string"
+typeof 42;      // "number"
+typeof true;    // "boolean"
+typeof {};      // "object"</code>
+    </section>
+
+    <section class="main-section" id="Functions">
+      <header>Functions</header>
+      <p>Functions are reusable blocks of code that perform a task and can return a value. They are the fundamental unit of composition in JavaScript.</p>
+      <code>function add(a, b) {
+  return a + b;
+}
+
+// Arrow function equivalent
+const multiply = (a, b) => a * b;
+
+add(2, 3);      // 5
+multiply(2, 3); // 6</code>
+      <p>Functions can take parameters, provide default values, and be passed around as first-class values — meaning you can store them in variables and pass them to other functions.</p>
+    </section>
+
+    <section class="main-section" id="Conditionals">
+      <header>Conditionals</header>
+      <p>Conditional statements let your program make decisions and run different code depending on whether a condition is true or false.</p>
+      <code>const hour = 14;
+
+if (hour < 12) {
+  console.log("Good morning");
+} else if (hour < 18) {
+  console.log("Good afternoon");
+} else {
+  console.log("Good evening");
+}</code>
+      <p>For short choices you can use the ternary operator: <code>const label = age >= 18 ? "adult" : "minor";</code></p>
+    </section>
+
+    <section class="main-section" id="Loops">
+      <header>Loops</header>
+      <p>Loops run a block of code repeatedly until a condition is met. They are essential for working with collections of data.</p>
+      <code>// Classic for loop
+for (let i = 0; i < 3; i++) {
+  console.log(i); // 0, 1, 2
+}
+
+// Iterating an array
+const fruits = ["apple", "pear", "kiwi"];
+for (const fruit of fruits) {
+  console.log(fruit);
+}</code>
+      <p>Other common loop forms include <code>while</code>, <code>do...while</code>, and array methods like <code>forEach</code> and <code>map</code>.</p>
+    </section>
+
+    <section class="main-section" id="Reference">
+      <header>Reference</header>
+      <p>All the information in this page is drawn from and expanded upon in the official documentation.</p>
+      <ul>
+        <li>The complete JavaScript reference is available at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">MDN Web Docs</a>.</li>
+        <li>Practice interactively at <a href="https://www.freecodecamp.org/learn" target="_blank" rel="noopener">freeCodeCamp</a>.</li>
+      </ul>
+      <p>Keep experimenting in the console — the fastest way to learn JavaScript is by writing it.</p>
+    </section>
+  </main>
+
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

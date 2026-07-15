@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Survey Form — CodeLaunch Bootcamp</title>
+  <style>
+    :root {
+      --bg: #0f1c2e;
+      --panel: #16263f;
+      --accent: #14b8a6;
+      --accent-dark: #0d9488;
+      --text: #e6edf5;
+      --muted: #9fb3c8;
+      --border: #2a3f5c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(160deg, #0b1523 0%, #13263d 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      padding: 40px 15px;
+    }
+    #title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin: 0 0 6px;
+      color: #fff;
+    }
+    #description {
+      text-align: center;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+    #survey-form {
+      max-width: 620px;
+      margin: 0 auto;
+      background: var(--panel);
+      padding: 30px 30px 34px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+    }
+    .form-group { margin-bottom: 22px; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #0f1d31;
+      color: var(--text);
+      font-size: 1rem;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(20,184,166,0.25);
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .inline-option { display: flex; align-items: center; margin-bottom: 8px; font-weight: 400; }
+    .inline-option input { width: auto; margin-right: 10px; }
+    fieldset { border: none; padding: 0; margin: 0; }
+    button {
+      width: 100%;
+      padding: 13px;
+      margin-top: 6px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+      color: #04121a;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { filter: brightness(1.08); }
+  </style>
+</head>
+<body>
+  <h1 id="title">CodeLaunch Bootcamp Survey</h1>
+  <p id="description">Help us shape the next cohort — tell us about your coding journey.</p>
+
+  <form id="survey-form">
+    <div class="form-group">
+      <label id="name-label" for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+    </div>
+
+    <div class="form-group">
+      <label id="email-label" for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+    </div>
+
+    <div class="form-group">
+      <label id="number-label" for="number">Years of coding experience</label>
+      <input type="number" id="number" name="experience" min="0" max="50" placeholder="e.g. 2" required />
+    </div>
+
+    <div class="form-group">
+      <label for="dropdown">Which best describes you?</label>
+      <select id="dropdown" name="role">
+        <option disabled selected value>Select one</option>
+        <option value="student">Student</option>
+        <option value="career-switcher">Career switcher</option>
+        <option value="self-taught">Self-taught developer</option>
+        <option value="professional">Working professional</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <fieldset>
+        <label>How comfortable are you with JavaScript?</label>
+        <label class="inline-option"><input type="radio" name="js-level" value="beginner" checked /> Beginner</label>
+        <label class="inline-option"><input type="radio" name="js-level" value="intermediate" /> Intermediate</label>
+        <label class="inline-option"><input type="radio" name="js-level" value="advanced" /> Advanced</label>
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <fieldset>
+        <label>Which topics do you want to learn? (check all that apply)</label>
+        <label class="inline-option"><input type="checkbox" name="topics" value="html-css" /> HTML &amp; CSS</label>
+        <label class="inline-option"><input type="checkbox" name="topics" value="react" /> React</label>
+        <label class="inline-option"><input type="checkbox" name="topics" value="node" /> Node.js &amp; APIs</label>
+        <label class="inline-option"><input type="checkbox" name="topics" value="databases" /> Databases</label>
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <label for="comments">Anything else you'd like us to know?</label>
+      <textarea id="comments" name="comments" placeholder="Your thoughts..."></textarea>
+    </div>
+
+    <button type="submit" id="submit">Submit</button>
+  </form>
+
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
