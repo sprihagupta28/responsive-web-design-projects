@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tribute Page — David Bowie</title>
+  <title>Tribute Page — Shreya Ghoshal</title>
   <style>
     :root {
-      --bg: #14101c;
-      --panel: #1e1830;
-      --accent: #e63946;
-      --gold: #f4c95d;
-      --text: #f3eef8;
-      --muted: #b4a9c9;
+      --bg: #0c1a1c;
+      --panel: #12262a;
+      --accent: #e6b422;
+      --teal: #2dd4bf;
+      --text: #f1f7f6;
+      --muted: #a7c4c0;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      background: radial-gradient(circle at top, #241a3a 0%, #120d1e 70%);
+      background: radial-gradient(circle at top, #163034 0%, #0a1517 70%);
       color: var(--text);
       padding: 40px 15px;
     }
@@ -34,7 +34,7 @@
       font-size: 2.6rem;
       margin: 0 0 4px;
       letter-spacing: 1px;
-      background: linear-gradient(90deg, var(--gold), var(--accent));
+      background: linear-gradient(90deg, var(--accent), var(--teal));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -46,7 +46,7 @@
       margin-bottom: 28px;
     }
     #img-div {
-      background: #0f0b18;
+      background: #081215;
       padding: 16px;
       border-radius: 12px;
       margin-bottom: 26px;
@@ -65,22 +65,22 @@
       margin-top: 12px;
     }
     #tribute-info h2 {
-      color: var(--gold);
-      border-bottom: 1px solid #33294d;
+      color: var(--accent);
+      border-bottom: 1px solid #24403f;
       padding-bottom: 6px;
     }
     .timeline { list-style: none; padding: 0; }
     .timeline li {
       padding: 10px 0 10px 90px;
       position: relative;
-      border-left: 2px solid var(--accent);
+      border-left: 2px solid var(--teal);
       margin-left: 12px;
     }
     .timeline .year {
       position: absolute;
       left: -8px;
       top: 10px;
-      color: var(--gold);
+      color: var(--accent);
       font-weight: bold;
       width: 80px;
       text-align: right;
@@ -89,55 +89,50 @@
     }
     p { line-height: 1.7; }
     .closing { text-align: center; margin-top: 30px; font-size: 1.05rem; }
-    a { color: var(--gold); }
+    a { color: var(--accent); }
   </style>
 </head>
 <body>
   <main id="main">
-    <h1 id="title">David Bowie</h1>
-    <p class="subtitle">1947 – 2016 · The chameleon of rock, forever reinventing sound and self</p>
+    <h1 id="title">Shreya Ghoshal</h1>
+    <p class="subtitle">Born 1984 · The voice of a generation of Indian playback music</p>
 
     <div id="img-div">
       <img id="image"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/David-Bowie_Chicago_2002-08-08_photoby_Adam-Bielawski-cropped.jpg/440px-David-Bowie_Chicago_2002-08-08_photoby_Adam-Bielawski-cropped.jpg"
-        alt="David Bowie performing live in 2002" />
-      <div id="img-caption">David Bowie performing in Chicago, 2002. Photo by Adam Bielawski (Wikimedia Commons).</div>
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Shreya_Ghoshal_Behindwoods_Gold_Icons_Awards_2023_%28cropped%29.jpg/500px-Shreya_Ghoshal_Behindwoods_Gold_Icons_Awards_2023_%28cropped%29.jpg"
+        alt="Shreya Ghoshal performing at an awards event in 2023" />
+      <div id="img-caption">Shreya Ghoshal at the Behindwoods Gold Icons event, 2023. Photo via Wikimedia Commons.</div>
     </div>
 
     <section id="tribute-info">
-      <h2>A life in eras</h2>
+      <h2>A career in milestones</h2>
       <ul class="timeline">
-        <li><span class="year">1947</span>Born David Robert Jones in Brixton, London.</li>
-        <li><span class="year">1969</span>Breaks through with "Space Oddity," released days before the Apollo 11 landing.</li>
-        <li><span class="year">1972</span>Introduces the flame-haired alien rock star Ziggy Stardust, redefining glam rock and stage persona.</li>
-        <li><span class="year">1977</span>Records the "Berlin Trilogy" with Brian Eno, pioneering ambient and electronic textures in rock.</li>
-        <li><span class="year">1983</span>Reaches global pop superstardom with the album <em>Let's Dance</em>.</li>
-        <li><span class="year">1996</span>Inducted into the Rock and Roll Hall of Fame.</li>
-        <li><span class="year">2016</span>Releases the album <em>Blackstar</em> on his 69th birthday, two days before his death — a final work widely read as a farewell.</li>
+        <li><span class="year">1984</span>Born on 12 March in Berhampore, West Bengal, India.</li>
+        <li><span class="year">2000</span>At sixteen, wins the television singing show <em>Sa Re Ga Ma</em> and is noticed by filmmaker Sanjay Leela Bhansali's family.</li>
+        <li><span class="year">2002</span>Makes her Bollywood playback debut with Bhansali's <em>Devdas</em>, winning a National Film Award for Best Female Playback Singer and a Filmfare Award — all before turning twenty.</li>
+        <li><span class="year">2000s</span>Becomes one of the most prolific and sought-after playback singers in India, recording across Hindi, Bengali, Tamil, Telugu, Kannada, Malayalam, Marathi and many more languages.</li>
+        <li><span class="year">2017</span>Becomes the first Indian singer to have a wax figure displayed at the Madame Tussauds museum in Delhi.</li>
+        <li><span class="year">Today</span>Holds five National Film Awards, seven Filmfare Awards, ten Filmfare Awards South and dozens of other honours, and continues to record and tour worldwide.</li>
       </ul>
 
-      <h2>Why he mattered</h2>
+      <h2>Why she matters</h2>
       <p>
-        Across five decades, David Bowie treated identity itself as an art form. He moved fearlessly
-        between glam, soul, electronic, and pop, dragging audiences into new territory each time and
-        proving that a musician could be a shapeshifter rather than a brand. His willingness to
-        embrace theatricality, androgyny, and constant reinvention gave permission to generations of
-        artists and outsiders to define themselves on their own terms.
+        Noted for her wide vocal range and remarkable versatility, Shreya Ghoshal moves effortlessly
+        between classical, filmi, ghazal, bhajan, and contemporary pop, and sings fluently in dozens
+        of languages. For millions of listeners across India and its diaspora, her voice is woven into
+        the soundtrack of everyday life — weddings, festivals, road trips, and quiet late nights alike.
       </p>
       <p>
-        Beyond the music, Bowie was a curious collaborator — an actor, painter, and early champion of
-        the internet as a creative and commercial medium for artists. He remains one of the most
-        influential and best-selling musicians in history, with an estimated 100 million records sold
-        worldwide.
+        More than two decades into her career, she remains a benchmark for young singers: proof that
+        technical mastery and genuine emotional warmth can live in the same voice. Her longevity,
+        range, and cross-language reach have made her one of the most influential playback singers of
+        her generation.
       </p>
     </section>
 
     <p class="closing">
-      "I don't know where I'm going from here, but I promise it won't be boring." — David Bowie
-    </p>
-    <p class="closing">
-      Read more about his extraordinary life on his
-      <a id="tribute-link" href="https://en.wikipedia.org/wiki/David_Bowie" target="_blank" rel="noopener noreferrer">Wikipedia entry</a>.
+      Learn more about her life and work on her
+      <a id="tribute-link" href="https://en.wikipedia.org/wiki/Shreya_Ghoshal" target="_blank" rel="noopener noreferrer">Wikipedia entry</a>.
     </p>
   </main>
 
